@@ -3,6 +3,8 @@
 var execSync = require("child_process").execSync;
 var fs = require('fs');
 
+var index_html = __dirname + '/index.html';
+
 function download(url, name) {
   var s = null;
   try {
@@ -62,6 +64,7 @@ function downloadAll(url) {
       execSync('mv *.m4a media');
       execSync('mv images/icon-*.png .');
       execSync('mv images/loading-logo.png .');
+      execSync('cp ' + index_html + ' .');
     }
   }
 }
