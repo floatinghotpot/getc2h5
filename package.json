@@ -1,0 +1,30 @@
+{
+  "name": "getc2h5",
+  "version": "0.0.1",
+  "description": "Tiny utility to get H5 game built with C2",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/floatinghotpot/getc2h5.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": {
+    "name": "Raymond Xie",
+    "email": "rjfun.mobile@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/getc2h5/issues"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "analyze": false,
+  "preferGlobal": "true",
+  "bin": {
+    "getc2h5": "index.js"
+  }
+}
