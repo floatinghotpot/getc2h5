@@ -1,6 +1,6 @@
 {
   "name": "getc2h5",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tiny utility to get H5 game built with C2",
   "main": "index.js",
   "scripts": {},
