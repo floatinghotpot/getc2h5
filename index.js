@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 var execSync = require("child_process").execSync;
@@ -51,9 +53,12 @@ function downloadAll(url) {
   if(s && s.isFile()) {
     var text = fs.readFileSync(manifest).toString();
     if(text) {
+      var jqfile = '';
       var files = text.split('\n');
       files.forEach(function(name, i){
-        download(url, name.trim());
+        name = name.trim();
+        if(name.indexOf('jquery')>=0) jqfile = name;
+        download(url, name);
       });
 
       mkdir('images');
@@ -64,7 +69,8 @@ function downloadAll(url) {
       execSync('mv *.m4a media');
       execSync('mv images/icon-*.png .');
       execSync('mv images/loading-logo.png .');
-      execSync('cp ' + index_html + ' .');
+
+      fs.writeFileSync('./index.html', fs.readFileSync(index_html).toString().replace('jquery-1.7.1.min.js', jqfile));
     }
   }
 }
